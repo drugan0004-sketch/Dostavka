@@ -1,10 +1,13 @@
 ﻿#include <iostream>
 #include<windows.h>
+#include <string>
+#include <registr.h>
 using namespace std;
 int main()
 {
     int select = 0;
-    char login[20]{}, password[20]{};
+    string login;
+    string password;
     bool running = true;
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
@@ -22,12 +25,10 @@ int main()
             running = false;
             break;
         
-        case 2:
-            cout << "Введите логин" << endl;
-            cin >> login;
-            cout << "Введите логин" << endl;
-            cin >> password;
-
+        case 1:
+            login = get_log();
+            password = get_pass();
+            break;
         }
 
     }

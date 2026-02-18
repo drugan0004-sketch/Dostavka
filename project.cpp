@@ -1,13 +1,51 @@
 ﻿#include <iostream>
 #include<windows.h>
+#include <string>
+#include <fstream>
+#include <vector>
+
+
 using namespace std;
-int main()
-{
+
+// Родион - ПОИСК
+
+void find_in_menu() {
+    ifstream file("каталог.txt");
+
+    if (!file.is_open()) {
+        return;
+    }
+
+    vector<string> katalog;
+    string line;
+
+    while (getline(file, line)) {
+        katalog.push_back(line);
+    }
+    file.close();
+
+    cout << "поиск: ";
+    string query;
+    getline(cin, query);
+
+    cout << "\n Результаты:" << endl;
+
+    for (int i = 0; i < katalog.size(); i++) {
+        if (katalog[i].find(query) != string::npos) {
+            cout << "- " << katalog[i] << endl;
+        }
+    }
+}
+
+int main() {
+    
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    setlocale(LC_ALL, "Russian");
+
     int select = 0;
     char login[20]{}, password[20]{};
     bool running = true;
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
     while (running) {
         cout << "Выберите действие: " << endl;
         cout << "0 - Выход " << endl;
@@ -31,6 +69,11 @@ int main()
         }
 
     }
+
+    find_in_menu(); //для проверки, если в названии блюдо пишется с
+    //большой буквы, то в поиске пишем с большой буквы
+    // пример: "Наб" -> Набор ...
+
     return 0;
    
 }

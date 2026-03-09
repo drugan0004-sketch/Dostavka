@@ -16,8 +16,8 @@ std::string get_log() {
 std::string get_pass() {
     std::string pass;
     std::cout << "Введите пароль:" << std::endl;
-    std::cin >> pass;
-    //std::getline(std::cin, pass);
+   // std::cin >> pass;
+    std::getline(std::cin, pass);
     return pass;
 }
 void find_in_menu() {
@@ -38,8 +38,8 @@ void find_in_menu() {
 
     cout << "поиск: ";
     string query;
-    cin >> query;
-    //getline(cin, query); не работало
+    //cin >> query;
+    getline(cin, query);
 
     cout << "\n Результаты:" << endl;
 
@@ -63,7 +63,7 @@ int main()
         cout << "0 - Выход " << endl;
         cout << "1 - Регистрация " << endl;
         //cout << "2 - Вход в аккаунт" << endl;
-        cout << "2- Поиск " << endl;
+        cout << "2 - Поиск " << endl;
         //cout << "4-: " << endl;
         cin >> select;
         switch (select)
@@ -85,3 +85,4 @@ int main()
     return 0;
 
 }
+

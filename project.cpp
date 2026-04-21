@@ -1,9 +1,7 @@
 #include <iostream>
 #include<windows.h>
 #include <string>
-#include <fstream>
-#include <vector>
-#include "registr.h"
+#include <registr.h>
 using namespace std;
 
 std::string get_log() {
@@ -77,8 +75,9 @@ int main()
             password = get_pass();
             break;
         
-        case 2:
-            find_in_menu();
+        case 1:
+            login = get_log();
+            password = get_pass();
             break;
         }
     }

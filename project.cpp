@@ -1,9 +1,11 @@
 ﻿#include <iostream>
 #include <fstream>
-#include<windows.h>
+#include <windows.h>
 #include <string>
-#include <registr.h>
-#include"vhod.cpp"
+#include "registr.h"
+#include "vhod.cpp"
+#include "cart_and_search.h"
+
 using namespace std;
 int main()
 {
@@ -27,28 +29,28 @@ int main()
         case 0:
             running_log = false;
             break;
-        
+
         case 1:
             login = get_log();
             password = get_pass();
             ofstream fout;
             fout.open("logins.txt", ios::out);
-            fout<<login<<endl<<password<<endl;
-            break;
-        }
-        case 2:
-            if(IsLogin(login,password)){
-                
-            running_log = false;}
+            fout << login << endl << password << endl;
             break;
 
+        case 2:
+            if (IsLogin(login, password)) {
+                running_log = false;
+            }
+            break;
+        }
     }
-    While(!running_log)
+    while(!running_log)
     {
         cout<<" Здревствуйте,"<< login << endl;
         cout << "Выберите действие: " << endl;
         cin >> select;
-        
+        break;
     }
     return 0;
    

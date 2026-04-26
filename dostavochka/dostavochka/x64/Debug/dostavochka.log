@@ -1,0 +1,7 @@
+﻿  dostavochka.cpp
+  search.cpp
+C:\Users\Игорь\source\repos\dostavochka\dostavochka\search.cpp(120,37): warning C4101: e: неиспользованная локальная переменная
+C:\Users\Игорь\source\repos\dostavochka\dostavochka\search.cpp(141,36): warning C4101: e: неиспользованная локальная переменная
+  vhod.cpp
+  Создание кода...
+  dostavochka.vcxproj -> C:\Users\Игорь\source\repos\dostavochka\x64\Debug\dostavochka.exe

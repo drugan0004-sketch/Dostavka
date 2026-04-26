@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="dostavochka/dostavochka.vcxproj" Id="77e2af9b-dab7-4ed7-b6ae-425e51d8dac2" />
+</Solution>

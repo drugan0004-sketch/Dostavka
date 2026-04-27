@@ -4,7 +4,9 @@
 #include <string>
 #include <clocale>
 #include "header.h"
-
+#include "registr.cpp"
+#include "vhod.cpp"
+#include "search.cpp"
 using namespace std;
 int main()
 {
@@ -70,8 +72,7 @@ int main()
         cout << "Здравствуйте, " << login << endl;
         cout << "Выберите действие: " << endl;
         cout << "0 - Выход " << endl;
-        //cout << "1 - Регистрация " << endl;
-        //cout << "2 - Вход в аккаунт" << endl;
+        cout << "1 - Поиск " << endl;
         cin >> select;
         switch (select)
         {
@@ -79,10 +80,10 @@ int main()
             running_log = true;
             break;
 
-        /*case 1:
-            search();
+        case 1:
+            find_in_menu();;
             break;
-        */
+        
         }
     }
 

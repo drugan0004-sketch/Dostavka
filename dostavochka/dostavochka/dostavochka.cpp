@@ -70,7 +70,7 @@ int main()
         cout << "Здравствуйте, " << login << endl;
         cout << "Выберите действие: " << endl;
         cout << "0 - Выход " << endl;
-        //cout << "1 - Регистрация " << endl;
+        cout << "1 - Поиск " << endl;
         //cout << "2 - Вход в аккаунт" << endl;
         cin >> select;
         switch (select)
@@ -79,10 +79,10 @@ int main()
             running_log = true;
             break;
 
-        /*case 1:
+        case 1:
             search();
             break;
-        */
+        
         }
     }
 

@@ -16,7 +16,7 @@ string get_pass() {
     return pass;
 }
 bool IsLogin(string login, string password) {
-    ifstream file("logins.txt");
+    ifstream file("users.txt");
     
     string fLogin, fPassword;
     

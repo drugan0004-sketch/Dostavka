@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <string>
 #include <clocale>
+#include "header.cpp"
 #include "login.cpp"
 #include "search.cpp"
 using namespace std;

@@ -9,16 +9,15 @@
 
 using namespace std;
 
-//функция поиска + корзина + офрмление заказа
+//функция корзина + офрмление заказа
 
 void search() {
-
-	//setlocale(LC_ALL, "Russian");
-	//SetConsoleOutputCP(1251);
-	//SetConsoleCP(1251);
-
+	system("chcp 65001 > nul");
+	SetConsoleCP(65001);
+	SetConsoleOutputCP(65001);
+	int chois;
 	ifstream file("menu.txt");
-
+	bool run = 1;
 	int k = 0;
 	string line;
 	while (getline(file, line)) {
@@ -36,27 +35,28 @@ void search() {
 	//объявим вектор для корзины продуктов
 	vector<string> cart;
 
-	while (true) {
-		string chois = "хз че писать";
+	while (run) {
+		
 		cout << "\n \nГлавная \nвыберите действие: \n";
-		cout << "1 - Корзина" << endl << "2 - Меню" << endl << "ваш выбор (1 или 2): "; cin >> chois; cout << endl; cin.ignore(10000, '\n');
-
-		if (chois == "1") {
+		cout << "1 - Корзина" << endl << "2 - Меню" << endl<<"3 - Выход" << endl << "ваш выбор : "; cin >> chois;  cout << endl; cin.ignore(10000, '\n');
+		
+		if (chois == 1) {
 			cout << "количество продуктов в вашей корзине: " << cart.size() << endl;
 			if (cart.size() == 0) {
 				cout << "\nдля оформления заказа выберите хотя бы один продукт из нашего меню";
 			}
 			else {
 				cout << "\nсодержимое корзины: \n\n";
-				for (int i = 0; i < cart.size(); i += 1) {
+				for (size_t i = 0; i < cart.size(); i += 1) {
 					cout << cart[i] << endl;
 				}
-				cout << "\nчтобы оформить заказ, напишите - оформить, чтобы выйти в главное меню напишите - выход";
+				cout << "\nчтобы оформить заказ, напишите - 1, чтобы выйти в главное меню напишите - 0";
 				string new_chois; cout << "\nваш выбор: "; cin >> new_chois;
-				if (new_chois == "выход") {
-
+				if (new_chois == "0") {
+					run = 0;
+					break;
 				}
-				else if (new_chois == "оформить") {
+				else if (new_chois == "1") {
 					cout << "\nзаказ успешно оформлен, оплата при получении\n"; break;
 				}
 				else {
@@ -64,7 +64,7 @@ void search() {
 				}
 			}
 		}
-		else if (chois == "2") {
+		else if (chois == 2) {
 			cout << "Выберите продукт, который вы хотите положить в корзину: \n";
 			int count = 1;
 			for (int i = 0; i < k; i += 1) {
@@ -72,17 +72,17 @@ void search() {
 				count += 1;
 			}
 			string chois2;
-			cout << "чтобы выбрать продукт из меню нажмите следующее: \n";
+			cout << "чтобы выбрать продукт из меню напишите следующее: \n";
 			cout <<
-				"поиск - для поиска по названию"
-				<< endl << "выход - для выхода в главное меню"
+				//"1 - для поиска по названию" <<
+				 endl << "0 - для выхода в главное меню"
 				<< endl << "номер продукта из меню, чтобы сразу добавить его в корзину\n" << endl;
 
 			cout << "ваш выбор: "; cin >> chois2;
-			if (chois2 == "выход") {
-
+			if (chois2 == "0") {
+				continue;
 			}
-			else if (chois2 == "поиск") {
+			else if (chois2 == "1") {
 				cin.ignore(10000, '\n');
 				string search;
 				cout << "введите букву или набор букв, дабы найти соответствия в меню: ";
@@ -143,7 +143,11 @@ void search() {
 				}
 			}
 		}
-		else {
+		else if (chois == 3) {
+			run = false;
+			continue;
+		}
+		else  {
 			cout << "\nнекорректный ввод, попробуйте снова";
 		}
 	}

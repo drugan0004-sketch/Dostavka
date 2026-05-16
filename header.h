@@ -6,7 +6,8 @@ using namespace std;
 
 string get_log();
 string get_pass();
-string get_address();
+void printrun();
+void printlog();
 bool IsLogin(string lg, string ps);
 void search();
 

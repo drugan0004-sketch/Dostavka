@@ -38,7 +38,7 @@ int main()
             login = get_log();
             password = get_pass();
             address = get_address();
-            ofstream fout("users.txt", ios::out);
+            ofstream fout("users.txt", ios::app);
 
             if (!fout.is_open()) {
                 cout << "Файл не открыт" << endl;

@@ -26,7 +26,7 @@ string get_address() {
 }
 
 bool IsLogin(string lg, string ps) {
-    ifstream file("users.txt", ios::app);
+    ifstream file("users.txt");
 
     string fLogin, fPassword, not_important;
 
